@@ -6,7 +6,7 @@
 CRGB leds[NUM_LEDS];
 
 void setup() {
-  
+  //Adafruit_NeoPixel myLeds = Adafruit_NeoPixel(numPix_2, pinPix_2, NEO_WRGB + NEO_KHZ800);
   FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);
   FastLED.setBrightness(10);
 
