@@ -1,7 +1,7 @@
 #include<FastLED.h>
 
-#define LED_AMOUNT        6
-#define DATA_PIN          8
+#define LED_AMOUNT        35
+#define DATA_PIN          11
 #define GLOBAL_BRIGHTNESS 10
 
 #define FRAGMENT_AMOUNT   2
