@@ -1,7 +1,8 @@
+//Mpaino test
 #include <FastLED.h>
 
-#define NUM_LEDS 6
-#define LED_PIN 8
+#define NUM_LEDS 100
+#define LED_PIN 11
 
 CRGB leds[NUM_LEDS];
 
