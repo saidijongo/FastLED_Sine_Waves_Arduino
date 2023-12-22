@@ -1,3 +1,4 @@
+//for UNO
 #include <FastLED.h>
 
 #define NUM_LEDS  6
