@@ -1,7 +1,8 @@
+//Mpaino PWM first pin
 #include <FastLED.h>
 
-#define NUM_LEDS  6
-#define LED_PIN   8
+#define NUM_LEDS  32
+#define LED_PIN   11
 
 DEFINE_GRADIENT_PALETTE( browngreen_gp ) { 
     0,    6,  255,    0,     //green
