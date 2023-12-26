@@ -1,13 +1,14 @@
 //Mpaino test
+
 #include <FastLED.h>
 
-#define NUM_LEDS 32
+#define NUM_LEDS 100
 #define LED_PIN 11
 
 CRGB leds[NUM_LEDS];
 
 // Number of LEDs in the moving group
-#define GROUP_SIZE 3
+#define GROUP_SIZE 5
 float animation = 0;
 float fadeAnimation = 0;
 
