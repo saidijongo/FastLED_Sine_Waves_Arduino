@@ -1,12 +1,14 @@
 #include<FastLED.h>
 
-#define LED_AMOUNT        6
-#define DATA_PIN          8
-#define GLOBAL_BRIGHTNESS 10
+
+#define LED_AMOUNT        30
+#define DATA_PIN          11
+#define GLOBAL_BRIGHTNESS 100
 
 CRGB leds[LED_AMOUNT];
 
 float animation = 0;
+
 
 void setup() {
   FastLED.addLeds<NEOPIXEL, DATA_PIN>(leds, LED_AMOUNT); 
