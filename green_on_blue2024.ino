@@ -1,11 +1,11 @@
 #include <FastLED.h>
 
-#define NUM_LEDS 32
+#define NUM_LEDS 32  
 
 CRGB leds[NUM_LEDS];
 
 void setup() {
-  FastLED.addLeds<NEOPIXEL, 11>(leds, NUM_LEDS);
+  FastLED.addLeds<NEOPIXEL, 11>(leds, NUM_LEDS); 
   Serial.begin(115200);
 }
 
@@ -25,7 +25,7 @@ void movingGreenLeds() {
   }
 
   FastLED.show();
-  FastLED.delay(50);  // Adjust the delay based on your desired speed
+  FastLED.delay(50); 
 
   // Clear the LEDs at the current position
   for (int i = 0; i < 3; ++i) {
@@ -35,8 +35,9 @@ void movingGreenLeds() {
   // Move the green LED group to the right
   startIndex = (startIndex + 1) % NUM_LEDS;
 
-  // Uncomment the following line to enable leftward movement as well
-  //startIndex = (startIndex + NUM_LEDS - 1) % NUM_LEDS;
+  // Move the green LED group to the left
+  // Comment the line above and uncomment the line below to enable leftward movement
+  // startIndex = (startIndex + NUM_LEDS - 1) % NUM_LEDS;
 
   EVERY_N_MILLISECONDS(100) {
     Serial.println(startIndex);
