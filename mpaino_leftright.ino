@@ -29,3 +29,13 @@ void loop() {
 
   FastLED.show();
 }
+
+/*
+uint16_t sinBeat: Declares an unsigned 16-bit integer variable named sinBeat.
+beatsin16(30, 0, NUM_LEDS - 1, 0, 0): Calls a function beatsin16 from the FastLED library.
+30: Frequency of the sine wave.
+0: Starting value for the sine wave.
+NUM_LEDS - 1: Ending value for the sine wave (assumes NUM_LEDS is a defined constant).
+0: Phase offset.
+0: Beats per minute (BPM).
+*/
