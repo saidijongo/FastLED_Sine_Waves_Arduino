@@ -1,4 +1,5 @@
-//adafruit: bueno
+//office adafruit: bueno
+//tested with two strips connected to one GPIO
 #include <FastLED.h>
 
 #define NUM_LEDS  32
