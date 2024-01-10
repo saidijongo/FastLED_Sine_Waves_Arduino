@@ -10,16 +10,16 @@ void setup() {
 }
 
 void blinkLEDs() {
-  const int blinkDuration = 20000;  // 20 seconds
+  const int blinkDuration = 10000;  // 10 seconds
   const int blinkInterval = 500;    // 500 milliseconds (0.5 seconds)
 
   unsigned long startTime = millis();
   unsigned long previousMillis = 0;
 
   while (millis() - startTime < blinkDuration) {
-    // Check if 20 seconds have elapsed
+    // Check if 10 seconds have elapsed
     unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= 20000) {
+    if (currentMillis - previousMillis >= blinkDuration) {
       // Turn off LEDs and exit the function
       fill_solid(leds, NUM_LEDS, CRGB::Black);
       FastLED.show();
