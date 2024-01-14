@@ -1,5 +1,5 @@
 #include <FastLED.h>
-
+//moving a group of green LEDs on a blue background 
 #define NUM_LEDS 32  
 
 CRGB leds[NUM_LEDS];
