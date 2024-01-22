@@ -11,7 +11,7 @@ CRGB leds[NUM_LEDS];
 #define NUM_LEDS_CUBE 15
 CRGB cube_leds[NUM_LEDS_CUBE];
 
-elapsedMillis elapsedTime; // Declare elapsedTime as a static variable, both led strips
+elapsedMillis elapsedTime; 
 
 void setup() {
   FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);
@@ -115,9 +115,9 @@ void blinkLEDs() {
 
 void loop() {
   ledStrip(100, 2000);
+  //delay(1000);
+  //roundStrip(100, 2000);
   delay(1000);
-  roundStrip(100, 2000);
-  // delay(1000);
   blinkLEDs();
   //delay(1000);
   //roundStrip(100, 2000);
