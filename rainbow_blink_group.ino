@@ -1,5 +1,3 @@
-
-//blended 3, bad
 #include <FastLED.h>
 #include <elapsedMillis.h>
 
@@ -84,7 +82,6 @@ void ledStrip(int speed, int runTime) {
       break;
     }
   }
-
   // Turn off LEDs after the runTime
   fill_solid(leds, NUM_LEDS, CRGB::Black); // Set all LEDs to black (off)
   FastLED.show();
@@ -112,7 +109,6 @@ void blinkLEDs() {
   fill_solid(leds, NUM_LEDS, CRGB::Black);
   FastLED.show();
 }
-
 void loop() {
   ledStrip(100, 2000);
   //delay(1000);
