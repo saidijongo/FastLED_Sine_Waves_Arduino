@@ -21,6 +21,7 @@ void setup() {
   FastLED.addLeds<WS2812B, LED_PIN_CUBE, GRB>(ledscube, NUM_LEDS_CUBE);
 }
 
+/*
 void roundStrip(int speed, int ledState) {
   int runTime = 2000;
   bool stripRunning = true;
@@ -58,6 +59,55 @@ void roundStrip(int speed, int ledState) {
   // Update the LED strip state
   isLedStripOn = (ledState == 1);
 }
+
+*/
+void roundStrip(int speed, int ledState) {
+  int runTime = 2000;
+  bool stripRunning = true;
+
+  if (ledState == 1 && isLedStripOn) {
+    // If the LED strip is already on and the command is to turn it on, do nothing
+    return;
+  } else if (ledState == 0 && !isLedStripOn) {
+    // If the LED strip is already off and the command is to turn it off, do nothing
+    return;
+  }
+
+  // Update the LED strip state
+  isLedStripOn = (ledState == 1);
+
+  static uint8_t startIndex = 0;
+  static uint8_t hue = 0;
+  unsigned long startTime = millis();
+
+  while (stripRunning && (millis() - startTime < runTime)) {
+    // Fill the entire LED strip with a rainbow gradient
+    fill_rainbow(ledscube, NUM_LEDS_CUBE, hue, 4);
+
+    // Move the rainbow effect from left to right
+    for (int i = 0; i < NUM_LEDS_CUBE; i++) {
+      ledscube[i] = ledscube[(i + startIndex) % NUM_LEDS_CUBE];
+    }
+
+    FastLED.show();
+    FastLED.delay(speed);
+
+    // Increment the rainbow hue to change colors
+    hue++;
+
+    // Move the rainbow gradient index
+    startIndex++;
+    if (startIndex >= NUM_LEDS_CUBE) {
+      startIndex = 0;
+    }
+  }
+
+  // Turn off LEDs after the runTime
+  fill_solid(ledscube, NUM_LEDS_CUBE, CRGB::Black); // Set all LEDs to black (off)
+  FastLED.show();
+  stripRunning = false; //stop iterations
+}
+
 
 void processCommand(String command) {
   char separator = ',';
